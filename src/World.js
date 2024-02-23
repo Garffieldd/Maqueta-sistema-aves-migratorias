@@ -6,6 +6,8 @@ import { useRef } from "react";
 import Cigueña from "./modelos/Cigueña"
 import { Vector3 } from "three";
 import { Canvas } from '@react-three/fiber'
+import Mapamundi from "./modelos/Mapamundi";
+import Ocean from "./modelos/Ocean"
 
 export function World(){
     
@@ -50,6 +52,10 @@ export function World(){
         <mesh ref={cigueñaRef}>
         <Cigueña />
         </mesh>
+
+        <Mapamundi />
+        
+        <Ocean/>
         
         
     </>

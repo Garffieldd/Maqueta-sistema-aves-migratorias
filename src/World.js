@@ -8,10 +8,13 @@ import { Vector3 } from "three";
 import { Canvas } from '@react-three/fiber'
 import Mapamundi from "./modelos/Mapamundi";
 import Ocean from "./modelos/Ocean"
+import Camada_cigueñas from "./modelos/Camada_cigueñas";
+import Cloud from "./modelos/Cloud"
 
 export function World(){
     
     const cigueñaRef = useRef()
+    
 
     // Variable HDRI para el cielo
     const env = 'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/4k/industrial_sunset_02_puresky_4k.hdr'
@@ -24,7 +27,7 @@ export function World(){
 
         
         const elapsedTime = state.clock.getElapsedTime();
-        const radius = 20   ; 
+        const radius = 60   ; 
         const posX = Math.cos(elapsedTime) * radius;
         const posZ = Math.sin(elapsedTime) * radius;
 
@@ -43,20 +46,22 @@ export function World(){
         <OrbitControls
             enableRotate = {true}
         />  
-        <ambientLight/>
-        
-        <directionalLight position={[10, 3, 3]} intensity={1.5} />
+       
+       <ambientLight intensity={0.3} /> 
 
         <Environment files={env} ground={{ height: 5, radius: 4096, scale: 400 }}/>
 
         <mesh ref={cigueñaRef}>
-        <Cigueña />
+        <Camada_cigueñas />
         </mesh>
+
+        <Cloud/>
 
         <Mapamundi />
         
         <Ocean/>
         
+
         
     </>
 }

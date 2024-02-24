@@ -7,7 +7,7 @@ export default function Mapamundi(props) {
   const { nodes, materials } = useGLTF("./static/mapamundi1.glb");
   return (
     <group {...props} dispose={null}>
-      <group scale={0.1} position={[-20,0,0]}>
+      <group scale={0.25} position={[-70,0,0]}>
         <group position={[313.1, 25, -51.9]}>
           <group position={[0, 20, 0]}>
             <group

@@ -11,7 +11,7 @@ root.render(
         fov: 45,
         near: 0.3,
         far: 1000,
-        position: [-50, 20, 60],
+        position: [-50, 200, 60],
         rotation: [0, 0, 0],
     } }
     >
